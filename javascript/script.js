@@ -918,14 +918,17 @@ function closeRegistrationPopup() {
 }
 
 // --- HAMBURGER MENU TOGGLE ---
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navBtns = document.querySelector('.nav-btns');
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const navBtns = document.querySelector(".nav-btns");
 
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    navBtns.classList.toggle('active');
-  });
-}
+  if (hamburger) {
+    hamburger.addEventListener("click", function() {
+      // Toggle class 'active' untuk mengubah tampilan menu
+      hamburger.classList.toggle("active");
+      if (navLinks) navLinks.classList.toggle("active");
+      if (navBtns) navBtns.classList.toggle("active");
+    });
+  }
+});
