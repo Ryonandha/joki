@@ -244,6 +244,8 @@ header {
 /* ============================================================
    8. HERO — PAGE HERO (semua halaman selain index)
    ============================================================ */
+
+/* Page hero standar — dipakai about, contact, programs, gallery, dll */
 .page-hero {
   min-height: 60vh;
   display: flex;
@@ -265,7 +267,7 @@ header {
 .page-hero .container {
   position: relative;
   z-index: 1;
-  margin-top: 0 !important; /* override inline style di HTML */
+  margin-top: 0 !important;
 }
 .page-hero h1 {
   max-width: 900px;
@@ -280,6 +282,37 @@ header {
   margin: 0 auto;
   line-height: 1.6;
   text-shadow: 0 2px 6px rgba(0,0,0,.5);
+}
+
+/* ============================================================
+   KHUSUS INDEX — .hero-section-index
+   Ganti <section class="page-hero hero-about"> di index.html
+   menjadi <section class="hero-section-index">
+   ============================================================ */
+.hero-section-index {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fallback: jika index.html belum diubah, gunakan :has() */
+.page-hero:has(.hero-slideshow) {
+  display: block;
+  padding: 0;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+.page-hero:has(.hero-slideshow)::before { display: none; }
+.page-hero .hero-slideshow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ============================================================
