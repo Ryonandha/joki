@@ -916,3 +916,16 @@ function closeDonationPopup() {
 function closeRegistrationPopup() {
   registrationPopup.style.display = "none";
 }
+
+// --- HAMBURGER MENU TOGGLE ---
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navBtns = document.querySelector('.nav-btns');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    navBtns.classList.toggle('active');
+  });
+}
